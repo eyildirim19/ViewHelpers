@@ -1,0 +1,26 @@
+﻿@model ViewHelpers.Models.Kullanici
+
+<html>
+<head>
+</head>
+<body>
+
+
+@using (Html.BeginForm("Ekle", "Home", FormMethod.Post))
+{
+	@Html.LabelFor(c=> c.KullaniciAdi)
+	<!--Model'in kullanıcı adı için render et...-->
+	
+	@Html.TextBoxFor(c=> c.KullaniciAdi,null,new{ @class="txtText",placeholder="Kullanıcı adı giriniz" })
+
+	@Html.ValidationMessageFor(c=> c.KullaniciAdi) 
+	<br />
+	@Html.LabelFor(c=> c.Sifre)
+	@Html.PasswordFor(c=> c.Sifre)
+	@Html.ValidationMessageFor(c=> c.KullaniciAdi) 
+	<br />
+	<input type="submit" value="Gönder" />
+}
+
+</body>
+</html>

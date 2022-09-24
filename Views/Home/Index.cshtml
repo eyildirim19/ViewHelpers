@@ -1,0 +1,32 @@
+﻿<html>
+<head>
+</head>
+<body>
+
+
+	<!--Helper metotlar
+
+	Asp.Net ve Asp.Net Core'da kullanılan yardımcı metotlardır. Bu metotlar html elemenleri tanımlamak yerine hazır metotlar ile html çıktıları almak için kullanılır.
+
+	-->
+
+	<a href="@Url.Action("Kaydet","Home")"> Controller'a veri gönder (Normal Yöntem) </a>
+
+	<br />
+	<!--Html.ActionLink a render eder. ilk parametre link texti. ikinci parametre actionname. üçüncü parametre controller name-->
+
+	@Html.ActionLink("Conroller'a veri gönder (Normal ve Helper Yöntem)","Kaydet","Home") <!--Helper metot-->
+	<br />
+	@Html.ActionLink("Conroller'a veri gönder (Helper for metotlar)","Kaydet","Home") <!--Helper metot-->
+
+	<br />
+	<!--tag helper-->
+	<a asp-controller="Home" asp-action="Register">Controllar'a veri gönder (TagHelper ile)</a>
+
+
+	<br />
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿
+
+<html>
+<head>
+</head>
+<body>
+
+
+
+
+	<form method="post" action="@Url.Action("Save","Home")">
+		<span>Kullanıcı Adınız</span>
+		<input name="KullaniciAdi" type="text" placeholder="Kullanıcı Adını Giriniz" />
+		<br />
+		<span>Şifreniz</span>
+		<input name="Sifre" type="password" />
+		<br />
+		<input type="submit" value="Kaydet" />
+	</form>
+	<br />
+	<!--Html Helper ile-->
+	<!--Html.BeginForm => form render eder-->
+	<!--Html.TextBox => input type text render eder-->
+	<!--Html.Password => input type password render eder-->
+	@using (Html.BeginForm("Save", "Home", FormMethod.Post))
+	{
+		@Html.Label("Kullanıcı Adınız :")
+		@Html.TextBox("KullaniciAdi",null,new{ placeholder="Kullanıcı Adı Giriniz"})
+		<br />
+		@Html.Label("Şifreniz :")
+		@Html.Password("Sifre")
+
+		<br />
+		<input type="submit" value="Kaydet" />
+	}
+</body>
+</html>

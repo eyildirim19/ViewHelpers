@@ -1,0 +1,43 @@
+﻿<!--taghelper ekliyoruz...-->
+@*@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+@model ViewHelpers.Models.Kullanici*@
+@model Kullanici
+
+<!-- 
+	
+	namespaceleri tek bir dosyada tanımlayıp bütün viewlardan erişebiliriz..dier türlü sayfaya tanımladığımızda sadece o sayfaya erişebilirz.
+
+	namespacelerin bütün viewlara tanısaması için Views klasörüne ViewImports.cshtml dosyası ekleriz. Bu dosyada ortak c# ifadeleri yazılarak bütün dosyalar(viewlar) yansıtılır..
+
+-->
+
+<html>
+<head>
+</head>
+<body>
+
+	<!--
+
+		TagHelper => TagHelper asp.net core ile birtlikte gelen view'da razor ifadeleri yazmadan yardımcı metotlar ile html çıktıları üretmek için kullanılır... Razor ifadelerine göre daha kolaydır...
+
+		taghelper kullanmak için sayfanıza addTagHelper *,Microsoft.AspNetCore.TagHelpers ifadesi ile taghelperlarını eklemeniz gerekir..
+
+		* bütün taghelper demektir. isterseniz tek bir taghelperda ekleyebilirsiniz. ancak * kullanamk daha mantıklı...
+
+	-->
+
+	<form asp-controller="Home" asp-action="Register" method="post">
+
+		<input asp-for="KullaniciAdi" placeholder="Kullanıcı Adınız" class="txtText" />
+
+
+		<span asp-validation-for="KullaniciAdi"></span>
+		<br />
+		<input asp-for="Sifre" type="password" placeholder="Şifreniz" />
+		<span asp-validation-for="Sifre"></span>
+		<br />
+		<input type="submit" value="Kaydet" />
+	</form>
+
+</body>
+</html>
